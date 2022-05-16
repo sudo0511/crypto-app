@@ -2,7 +2,7 @@
   --text-primary: #000;
   --bgPrimary: #fff;
   --bgSecondary: #f9f9f9;
-  --pink: #0071bd;
+  --pink: #090215;
   --light-blue: #e6f7ff;
   --border: #d9d9d9;
 }
@@ -19,6 +19,7 @@ a:hover {
 
 .app {
   display: flex;
+
   overflow: hidden;
 }
 
@@ -75,7 +76,7 @@ a:hover {
 
 @media screen and (max-width: 1300px) {
   .main {
-    margin-left: 50px;
+    margin-left: 0px;
   }
 }
 
@@ -87,7 +88,8 @@ a:hover {
 
 @media screen and (max-width: 1000px) {
   .main {
-    margin-left: 100px;
+    margin-left: 200px;
+    margin-right: 10px;
   }
 }
 
@@ -160,7 +162,7 @@ a:hover {
 
 .stats-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 40px;
 }
@@ -250,7 +252,7 @@ a:hover {
 }
 
 .coin-link a {
-  color: var(--pink);
+  color: rgb(23, 125, 202);
   font-weight: 700;
   font-size: 1rem;
 }
@@ -287,7 +289,7 @@ a:hover {
 }
 
 .select-news {
-  width: 180px;
+  width: 220px;
 }
 .news-card {
   min-height: 300px !important;
@@ -374,4 +376,13 @@ a:hover {
   flex-direction: column;
   padding: 20px;
   align-items: center;
+}
+
+.crypto-image-icon {
+  width: 100%;
+  height: 30px;
+}
+
+.loader {
+  margin: 0 auto;
 }

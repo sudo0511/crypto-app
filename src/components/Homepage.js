@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
 import { Typography, Row, Col, Statistic, Spin } from "antd";
@@ -7,7 +7,7 @@ import Cryptocurrencies from "./Cryptocurrencies";
 import News from "./News";
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   const { Title } = Typography;
   const globalStats = data?.data?.stats;
   // console.log(globalStats);
@@ -15,15 +15,15 @@ const Homepage = () => {
   if (isFetching) {
     return (
       <div>
-        <Spin tip="Loading...."></Spin>
+        <Spin className="loader" tip="Loading..."></Spin>
       </div>
     );
   }
   return (
     <>
-      <Typography.Title level={2} className="heading">
+      <Title level={2} className="heading">
         Global Crypto Statistic
-      </Typography.Title>
+      </Title>
       <Row>
         <Col span={12}>
           <Statistic
@@ -64,7 +64,7 @@ const Homepage = () => {
           <Link to="/cryptocurrencies">Show More</Link>
         </Title>
       </div>
-      <Cryptocurrencies />
+      <Cryptocurrencies simplified={true} />
       <div className="home-heading-container">
         <Title level={2} className="home-title">
           Latest Crypto News
@@ -73,7 +73,7 @@ const Homepage = () => {
           <Link to="/news">Show More</Link>
         </Title>
       </div>
-      <News />
+      <News simplified />
     </>
   );
 };
